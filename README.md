@@ -1,18 +1,20 @@
-simple paragraph on how to clone and run your app locally. Preferably, write it in bullet points.
+## README.md
+
+#### by Alex Holyk
 
 To clone and run this app locally:
 
-- On command line, run: 'git clone https://github.com/alexanderholyk/ML_in_Streamlit'
+- On command line, run: `git clone https://github.com/alexanderholyk/ML_in_Streamlit`
 
-- Switch into the folder: 'cd ML_in_Streamlit' or similar
+- Switch into the folder: `cd ML_in_Streamlit` or similar
 
-- Optional: create a virtual environment: 'python3 -m venv .venv'
+- Optional: create a virtual environment: `python3 -m venv .venv`
 
-- On command line, run: 'pip install -r requirements.txt'
+- On command line, run: `pip install -r requirements.txt`
 
-- On command line, run: 'streamlit run app.py' This opens a browser window where the app will open.
+- On command line, run: `streamlit run app.py` This opens a browser window where the app will open.
 
-- In text box, type a movie review to test. Follow the onscreen instructions to submit it. Then click the button 'Analyze' to see the result!
+- In text box, type a movie review to test. Follow the onscreen instructions to submit it. Then click the button `Analyze` to see the result!
 
 
 Note: "IMDB Dataset.csv" came directly from the website: https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews

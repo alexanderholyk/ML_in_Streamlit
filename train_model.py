@@ -1,4 +1,5 @@
 # train_model.py
+# by Alex Holyk
 
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
