@@ -8,7 +8,7 @@ To clone and run this app locally:
 
 - Switch into the folder: `cd ML_in_Streamlit` or similar
 
-- Optional: create a virtual environment: `python3 -m venv .venv`
+- Optional: create a virtual environment: `python3 -m venv .venv` and then activate it with `source .venv/bin/activate`
 
 - On command line, run: `pip install -r requirements.txt`
 
