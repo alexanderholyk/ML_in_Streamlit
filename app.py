@@ -17,17 +17,19 @@ def load_model():
 
 model = load_model()
 
-# Create the user input interface
+# Create the user input box
 review_text = st.text_area('Enter a movie review to analyze:')
 
 if st.button('Analyze'):
     if review_text:
-        # Make prediction
+        # Show the prediction
         prediction = model.predict([review_text])
-        thumbs =  '👍' if prediction[0] == 'positive' else '👎'
-        st.write(f'Predicted sentiment: **{prediction[0]}**! {thumbs}')
+        if prediction[0] == 'positive':
+            st.success('Prediction: a positive revew! 👍')
+        else:
+            st.error('Prediction: a negative review. 👎')
 
-        # Display the prediction probabilities
+        # Show the prediction probabilities
         prediction_proba = model.predict_proba([review_text])
         st.write('Prediction Probabilities:')
         st.write(f'Positive: {prediction_proba[0][1]:.2f}, Negative: {prediction_proba[0][0]:.2f}')
