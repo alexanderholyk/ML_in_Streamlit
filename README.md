@@ -1,8 +1,31 @@
 ## README.md
 
-#### by Alex Holyk
+### by Alex Holyk
 
-To clone and run this app locally:
+### Description:
+
+This project serves as a brief use of ML for sentiment analysis, as a template or tutorial for applying ML in the streamlit interface via a Docker container.
+
+### Prerequisites
+Docker and Python must be installed on the user's computer. Further libraries are listed in requirements.txt, but by following How to Run, these will be added loaded automatically.
+
+### How to clone and run in Docker
+
+- On command line, run: `git clone https://github.com/alexanderholyk/ML_in_Streamlit`
+
+- Switch into the folder: `cd ML_in_Streamlit` or similar
+
+- On command line, run: `make build` to build the image in Docker
+
+- On command line, run: `make run` to run a container. This will show a Local URL; copy and paste this into the brower to load the streamlit app.
+
+- In text box, type a movie review to test. Follow the onscreen instructions to submit it. Then click the button `Analyze` to see the result! You can close the brower window or keep trying new reviews as desired.
+
+- To terminate the program, on command line press `ctrl + c`. From your `make run` earlier, this will automatically close the container.
+
+- Finally, to delete the image and keep your system clean, run `make clean`.
+
+### How to clone and run via a virtual environment
 
 - On command line, run: `git clone https://github.com/alexanderholyk/ML_in_Streamlit`
 
@@ -17,7 +40,9 @@ To clone and run this app locally:
 - In text box, type a movie review to test. Follow the onscreen instructions to submit it. Then click the button `Analyze` to see the result!
 
 
-Note: "IMDB Dataset.csv" came directly from the website: https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
+#### Note:
+
+"IMDB Dataset.csv" came directly from the website: https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
 
 
 
@@ -26,7 +51,7 @@ Note: "IMDB Dataset.csv" came directly from the website: https://www.kaggle.com/
 
 
 
---- Full Assignment Text ---
+### Full Assignment Text From MLOps Class
 
 ### Assignment 1 - Streamlit App
 
@@ -157,3 +182,86 @@ For extra credit, you can add one or more of the following features:
 
 Display the prediction probability using the model's .predict_proba() method.
 Style the output with color. For example, show positive predictions in green and negative predictions in red. (Hint: st.success() and st.error())
+
+
+### And for the second part, where we add Docker:
+
+#### Homework Assignment: Packaging Your Streamlit App with Docker
+
+Objective: The goal of this assignment is to take the sentiment analysis application you built in Assignment 1 and package it into a standard, reproducible container using Docker. This is a foundational skill for deploying machine learning models in a real-world production environment as mentioned in class. You must have Docker installed and running on your machine for this assignment.
+
+Due Date: Thursday, 3rd July. 11.59 pm MT
+
+#### Tasks & Project Structure
+
+You will create several new files to containerize your application. When you are finished, your project folder should look like this:
+
+.
+├── .gitignore
+├── Dockerfile
+├── Makefile
+├── README.md
+├── app.py
+├── requirements.txt
+└── model.pkl
+ 
+
+**Step 1: Create a .gitignore file**
+
+- This file tells Git which files or folders to ignore.
+
+- Create a .gitignore file and add entries for common Python artifacts (e.g., __pycache__/, .pyc) and any local environment files (e.g., *.env).
+
+**Step 2: Create a Dockerfile**
+
+- This is the blueprint for building your Docker image.
+
+- Your Dockerfile must perform the following steps:
+
+    1. Start from an official Python base image (e.g., python:3.9-slim).
+
+    2. Set a working directory inside the container (e.g., /app).
+
+    3. Copy the requirements.txt file into the container.
+
+    4. Install the Python dependencies using pip.
+
+    5. Copy the rest of your application files (app.py) into the container.
+
+    6. Expose the port that Streamlit runs on (default is 8501).
+
+    7. Define the command (CMD) to run the Streamlit app when the container starts.
+
+**Step 3: Create a Makefile**
+
+- A Makefile simplifies complex Docker commands into simple ones. This is a common practice in many development teams.
+
+- Your Makefile should provide at least three commands:
+
+    - build: This command should build the Docker image and give it a name (e.g., sentiment-app).
+
+    - run: This command should run a container from your image, mapping the container's port to a port on your local machine so you can access the app in your browser.
+
+    - clean: This command should delete the image.
+
+**Step 4: Create a README.md file**
+
+- This is the instruction manual for your project.
+
+- Your README.md must include:
+
+    1. A brief description of the project.
+
+    2. A "Prerequisites" section listing what a user needs to run it (i.e., Docker).
+
+    3. A "How to Run" section with clear, step-by-step instructions on how to use your Makefile to build and run the application. It should tell the user what URL to visit in their browser (e.g., http://localhost:8501).
+
+ 
+
+#### Submission Guidelines
+
+To receive full grade, you must push all the files to the GitHub repository you create for Assignment 1 (make sure it's public or add my email if you want to keep it private: rahimrasool17@gmail.com).
+
+You only have to add the GitHub URL when submitting the assignment. This is a solo assignment so you should not pair up for this specific assignment. However, you are not restricted to seek help or get support from each other.
+
+The most important aspect of this assignment is reproducibility. Therefore, before submitting, please test running the app on the container in a new computer or environment to ensure it's working correctly. The bottom-line is that when I clone your repos, I should be able to smoothly run the app with simple make commands and easy-to-follow README.
