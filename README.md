@@ -197,12 +197,19 @@ Due Date: Thursday, 3rd July. 11.59 pm MT
 You will create several new files to containerize your application. When you are finished, your project folder should look like this:
 
 .
+
 ├── .gitignore
+
 ├── Dockerfile
+
 ├── Makefile
+
 ├── README.md
+
 ├── app.py
+
 ├── requirements.txt
+
 └── model.pkl
  
 
